@@ -18,14 +18,19 @@ class TipPresenter : TipPresenterInterface {
     }
     
     func calculateTip(total: String?) {
-        if (total == nil) { return; }
+        if (total == "") {
+            view?.showTip(tip: "")
+            view?.showTotal(total: "")
+            view?.showTotalsSection(show: false)
+            return;
+        }
             let preTipTotal = Float(total!);
             if (preTipTotal != nil) {
                 let tip = preTipTotal! * tipPercentage
                 let totalBill = preTipTotal! + tip
                 view?.showTip(tip: String(format:"$%.2f", tip))
                 view?.showTotal(total: String(format:"$%.2f", totalBill))
-                print("the tip is \(tip) and the total is \(totalBill)")
+                view?.showTotalsSection(show: true)
             }
     }
     

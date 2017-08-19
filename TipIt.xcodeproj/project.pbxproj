@@ -547,6 +547,7 @@
 				AB679C131F48AF6C006F7B19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB679C141F48AF6C006F7B19 /* Build configuration list for PBXNativeTarget "TipItTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +556,7 @@
 				AB679C161F48AF6C006F7B19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB679C171F48AF6C006F7B19 /* Build configuration list for PBXNativeTarget "TipItUITests" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +565,7 @@
 				AB679C191F48AF6C006F7B19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
