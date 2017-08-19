@@ -10,22 +10,36 @@ import UIKit
 
 // Implementatin of TipView
 // Handles the view and ui - should be as simple as possible
-class TipViewController: UIViewController, TipView, UITextFieldDelegate {
+class TipViewController: UIViewController, TipView, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
-    var tips: [Float] = [0.15, 0.20, 0.25]
+    struct Constants {
+        static let CellReuseIdentifier = "PersonTip Cell"
+    }
     
     // Outlets
     @IBOutlet weak var pretotalTextField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var totalsView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var rateButton: UIBarButtonItem!
     
-    private let presenter: TipPresenter = TipPresenter()
+    var perPersonTips = [PerPersonTip?]()
+    private let presenter: TipPresenter = TipPresenter(tipRepository: TipRepository())
     
+    /**
+        Lifecycle methods
+    **/
     override func viewDidLoad() {
         super.viewDidLoad()
         // Start with the totals hidden
         self.totalsView.alpha = 0
+        
+        // Set the table
+        self.tableView.register(UINib(nibName: "TipTableViewCell", bundle: nil), forCellReuseIdentifier: Constants.CellReuseIdentifier)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
         pretotalTextField.delegate = self
         presenter.attachView(view: self)
         self.hideKeyboardWhenPossible()
@@ -35,11 +49,16 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate {
         super.viewWillDisappear(animated)
         presenter.detachView()
     }
+    // End of lifecycle methods
     
+    /**
+        TipView protocol methods
+    **/
     func showTotalsSection(show: Bool) {
+    
         UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
             self.totalsView.alpha = (show ? 1 : 0)
-            }, completion: nil)
+        }, completion: nil)
     }
     
     func showTip(tip: String) {
@@ -54,14 +73,76 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate {
         
     }
     
+    func showTipChanger(currentTipRate: String) {
+        let title = String(currentTipRate)
+        let alertController = UIAlertController(title: title, message: "To change the rate, pick one below:", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let fifteenRate = UIAlertAction(title: "15%", style: UIAlertActionStyle.default) { (action) -> Void in
+            self.presenter.updateTipPercentage(tipPercentage: 0.15)
+        }
+        let twentyRate = UIAlertAction(title: "20%", style: UIAlertActionStyle.default) { (action) -> Void in
+            self.presenter.updateTipPercentage(tipPercentage: 0.20)
+        }
+        let twentyFive = UIAlertAction(title: "25%", style: UIAlertActionStyle.default) { (action) -> Void in
+            self.presenter.updateTipPercentage(tipPercentage: 0.25)
+        }
+        alertController.addAction(fifteenRate)
+        alertController.addAction(twentyRate)
+        alertController.addAction(twentyFive)
+        self.present(alertController, animated: true, completion:nil)
+    }
+    
+    func showTipChange(percent: String) {
+        rateButton.title = percent
+        // Flash the screen first to indicate something has changed
+        if let currentWindow = self.view {
+            let view = UIView(frame: currentWindow.bounds)
+            view.backgroundColor = UIColor.green
+            view.alpha = 1
+            currentWindow.addSubview(view)
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+                view.alpha = 0
+            }, completion: { (finished: Bool) in
+                view.removeFromSuperview()
+                
+            })
+        }
+    }
+    
+    func showPerPersonTips(tips: [PerPersonTip]) {
+        perPersonTips = tips
+        self.tableView.isHidden = false
+        self.tableView.reloadData()
+    }
+    
+    func hidePersonTips() {
+        self.tableView.isHidden = true
+    }
+    // End of TipView protocol methods
+    
+    /**
+        Actions - clicks from the user
+    **/
     @IBAction func editTextChanged(_ sender: UITextField) {
         presenter.calculateTip(total: sender.text)
     }
     
-    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
-        if (sender.selectedSegmentIndex < tips.count) {
-            presenter.updateTipPercentage(tipPercentage: tips[sender.selectedSegmentIndex])
-        }
+    @IBAction func rateClicked(_ sender: Any) {
+        presenter.clickedTipPercentage()
+    }
+    
+    /**
+        Table View delegate methods
+     
+     **/
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return perPersonTips.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellReuseIdentifier, for: indexPath) as! TipTableViewCell
+        let perPersonTip = perPersonTips[indexPath.row]
+        cell.personTip = perPersonTip!
+        return cell
     }
 }
 

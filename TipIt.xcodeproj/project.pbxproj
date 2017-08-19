@@ -16,6 +16,11 @@
 		AB679C0D1F48AF6C006F7B19 /* TipItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679C0C1F48AF6C006F7B19 /* TipItUITests.swift */; };
 		AB679C1F1F48B175006F7B19 /* TipContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679C1E1F48B175006F7B19 /* TipContract.swift */; };
 		AB679C211F48B3C1006F7B19 /* TipPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679C201F48B3C1006F7B19 /* TipPresenter.swift */; };
+		AB750C681F48D23800819AA0 /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB750C661F48D23800819AA0 /* TipTableViewCell.swift */; };
+		AB750C691F48D23800819AA0 /* TipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB750C671F48D23800819AA0 /* TipTableViewCell.xib */; };
+		AB750C6D1F48D60600819AA0 /* PerPersonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB750C6C1F48D60600819AA0 /* PerPersonTip.swift */; };
+		AB750C701F48FA3300819AA0 /* TipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB750C6F1F48FA3300819AA0 /* TipRepository.swift */; };
+		AB750C721F48FA4800819AA0 /* TipDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB750C711F48FA4800819AA0 /* TipDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		AB679C0E1F48AF6C006F7B19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB679C1E1F48B175006F7B19 /* TipContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipContract.swift; sourceTree = "<group>"; };
 		AB679C201F48B3C1006F7B19 /* TipPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipPresenter.swift; sourceTree = "<group>"; };
+		AB750C661F48D23800819AA0 /* TipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipTableViewCell.swift; sourceTree = "<group>"; };
+		AB750C671F48D23800819AA0 /* TipTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipTableViewCell.xib; sourceTree = "<group>"; };
+		AB750C6C1F48D60600819AA0 /* PerPersonTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerPersonTip.swift; sourceTree = "<group>"; };
+		AB750C6F1F48FA3300819AA0 /* TipRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipRepository.swift; sourceTree = "<group>"; };
+		AB750C711F48FA4800819AA0 /* TipDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +144,8 @@
 		AB679C1A1F48AF7B006F7B19 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				AB750C661F48D23800819AA0 /* TipTableViewCell.swift */,
+				AB750C671F48D23800819AA0 /* TipTableViewCell.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -149,6 +161,9 @@
 		AB679C1C1F48AF8A006F7B19 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				AB750C6E1F48FA1000819AA0 /* vo */,
+				AB750C6F1F48FA3300819AA0 /* TipRepository.swift */,
+				AB750C711F48FA4800819AA0 /* TipDataSource.swift */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -161,6 +176,14 @@
 				AB679C201F48B3C1006F7B19 /* TipPresenter.swift */,
 			);
 			name = tip;
+			sourceTree = "<group>";
+		};
+		AB750C6E1F48FA1000819AA0 /* vo */ = {
+			isa = PBXGroup;
+			children = (
+				AB750C6C1F48D60600819AA0 /* PerPersonTip.swift */,
+			);
+			name = vo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB679BF71F48AF6C006F7B19 /* LaunchScreen.storyboard in Resources */,
+				AB750C691F48D23800819AA0 /* TipTableViewCell.xib in Resources */,
 				AB679BF41F48AF6B006F7B19 /* Assets.xcassets in Resources */,
 				AB679BF21F48AF6B006F7B19 /* Main.storyboard in Resources */,
 			);
@@ -299,8 +323,12 @@
 			files = (
 				AB679BEF1F48AF6B006F7B19 /* TipViewController.swift in Sources */,
 				AB679BED1F48AF6B006F7B19 /* AppDelegate.swift in Sources */,
+				AB750C681F48D23800819AA0 /* TipTableViewCell.swift in Sources */,
+				AB750C701F48FA3300819AA0 /* TipRepository.swift in Sources */,
 				AB679C211F48B3C1006F7B19 /* TipPresenter.swift in Sources */,
 				AB679C1F1F48B175006F7B19 /* TipContract.swift in Sources */,
+				AB750C721F48FA4800819AA0 /* TipDataSource.swift in Sources */,
+				AB750C6D1F48D60600819AA0 /* PerPersonTip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

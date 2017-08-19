@@ -15,13 +15,19 @@ protocol TipView: NSObjectProtocol {
     func showTotalsSection(show: Bool)
     func showTip(tip: String)
     func showTotal(total: String)
+    func showPerPersonTips(tips: [PerPersonTip])
+    func hidePersonTips()
+    func showTipChange(percent: String)
+    func showTipChanger(currentTipRate: String)
     func showError(message: String)
 }
 
 // Protocol that defines how implementations should handle the business logic
 protocol TipPresenterInterface {
+    func clickedTipPercentage()
     func updateTipPercentage(tipPercentage: Float)
     func calculateTip(total: String?)
+    func calculatePerPersonTip(tip: Float, total: Float)
     func attachView(view: TipView)
     func detachView()
 }
