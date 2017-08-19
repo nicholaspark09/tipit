@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AB679BED1F48AF6B006F7B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679BEC1F48AF6B006F7B19 /* AppDelegate.swift */; };
-		AB679BEF1F48AF6B006F7B19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679BEE1F48AF6B006F7B19 /* ViewController.swift */; };
+		AB679BEF1F48AF6B006F7B19 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679BEE1F48AF6B006F7B19 /* TipViewController.swift */; };
 		AB679BF21F48AF6B006F7B19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB679BF01F48AF6B006F7B19 /* Main.storyboard */; };
 		AB679BF41F48AF6B006F7B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB679BF31F48AF6B006F7B19 /* Assets.xcassets */; };
 		AB679BF71F48AF6C006F7B19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB679BF51F48AF6C006F7B19 /* LaunchScreen.storyboard */; };
 		AB679C021F48AF6C006F7B19 /* TipItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679C011F48AF6C006F7B19 /* TipItTests.swift */; };
 		AB679C0D1F48AF6C006F7B19 /* TipItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679C0C1F48AF6C006F7B19 /* TipItUITests.swift */; };
+		AB679C1F1F48B175006F7B19 /* TipContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679C1E1F48B175006F7B19 /* TipContract.swift */; };
+		AB679C211F48B3C1006F7B19 /* TipPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679C201F48B3C1006F7B19 /* TipPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		AB679BE91F48AF6B006F7B19 /* TipIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB679BEC1F48AF6B006F7B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB679BEE1F48AF6B006F7B19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB679BEE1F48AF6B006F7B19 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		AB679BF11F48AF6B006F7B19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB679BF31F48AF6B006F7B19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB679BF61F48AF6C006F7B19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		AB679C081F48AF6C006F7B19 /* TipItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB679C0C1F48AF6C006F7B19 /* TipItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipItUITests.swift; sourceTree = "<group>"; };
 		AB679C0E1F48AF6C006F7B19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB679C1E1F48B175006F7B19 /* TipContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipContract.swift; sourceTree = "<group>"; };
+		AB679C201F48B3C1006F7B19 /* TipPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,10 @@
 		AB679BEB1F48AF6B006F7B19 /* TipIt */ = {
 			isa = PBXGroup;
 			children = (
+				AB679C1C1F48AF8A006F7B19 /* data */,
+				AB679C1B1F48AF86006F7B19 /* ui */,
+				AB679C1A1F48AF7B006F7B19 /* views */,
 				AB679BEC1F48AF6B006F7B19 /* AppDelegate.swift */,
-				AB679BEE1F48AF6B006F7B19 /* ViewController.swift */,
 				AB679BF01F48AF6B006F7B19 /* Main.storyboard */,
 				AB679BF31F48AF6B006F7B19 /* Assets.xcassets */,
 				AB679BF51F48AF6C006F7B19 /* LaunchScreen.storyboard */,
@@ -123,6 +129,38 @@
 				AB679C0E1F48AF6C006F7B19 /* Info.plist */,
 			);
 			path = TipItUITests;
+			sourceTree = "<group>";
+		};
+		AB679C1A1F48AF7B006F7B19 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		AB679C1B1F48AF86006F7B19 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				AB679C1D1F48AF95006F7B19 /* tip */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		AB679C1C1F48AF8A006F7B19 /* data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		AB679C1D1F48AF95006F7B19 /* tip */ = {
+			isa = PBXGroup;
+			children = (
+				AB679BEE1F48AF6B006F7B19 /* TipViewController.swift */,
+				AB679C1E1F48B175006F7B19 /* TipContract.swift */,
+				AB679C201F48B3C1006F7B19 /* TipPresenter.swift */,
+			);
+			name = tip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB679BEF1F48AF6B006F7B19 /* ViewController.swift in Sources */,
+				AB679BEF1F48AF6B006F7B19 /* TipViewController.swift in Sources */,
 				AB679BED1F48AF6B006F7B19 /* AppDelegate.swift in Sources */,
+				AB679C211F48B3C1006F7B19 /* TipPresenter.swift in Sources */,
+				AB679C1F1F48B175006F7B19 /* TipContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
