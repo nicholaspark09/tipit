@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6644DD0AAA04CB91B439536E /* Pods_TipItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD45C45768EAAF0309E3665 /* Pods_TipItUITests.framework */; };
 		AB679BED1F48AF6B006F7B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679BEC1F48AF6B006F7B19 /* AppDelegate.swift */; };
 		AB679BEF1F48AF6B006F7B19 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB679BEE1F48AF6B006F7B19 /* TipViewController.swift */; };
 		AB679BF21F48AF6B006F7B19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB679BF01F48AF6B006F7B19 /* Main.storyboard */; };
@@ -21,6 +22,9 @@
 		AB750C6D1F48D60600819AA0 /* PerPersonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB750C6C1F48D60600819AA0 /* PerPersonTip.swift */; };
 		AB750C701F48FA3300819AA0 /* TipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB750C6F1F48FA3300819AA0 /* TipRepository.swift */; };
 		AB750C721F48FA4800819AA0 /* TipDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB750C711F48FA4800819AA0 /* TipDataSource.swift */; };
+		AB750C741F49085B00819AA0 /* TipPresenterUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB750C731F49085B00819AA0 /* TipPresenterUnitTest.swift */; };
+		B2B4A916CCD09E438CB68A4C /* Pods_TipIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315184B256EA06D4D22C4D18 /* Pods_TipIt.framework */; };
+		D6C38186789069C7C45D3303 /* Pods_TipItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7550CCB34B5018A0C39729F2 /* Pods_TipItTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1583FFA9AC15FE852805DC87 /* Pods-TipIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipIt/Pods-TipIt.debug.xcconfig"; sourceTree = "<group>"; };
+		315184B256EA06D4D22C4D18 /* Pods_TipIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C738DFA69AA0CA9CA5B271F /* Pods-TipItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipItUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipItUITests/Pods-TipItUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7550CCB34B5018A0C39729F2 /* Pods_TipItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		807F3DE10CBEA9C5879E0882 /* Pods-TipIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipIt/Pods-TipIt.release.xcconfig"; sourceTree = "<group>"; };
 		AB679BE91F48AF6B006F7B19 /* TipIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB679BEC1F48AF6B006F7B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB679BEE1F48AF6B006F7B19 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +70,11 @@
 		AB750C6C1F48D60600819AA0 /* PerPersonTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerPersonTip.swift; sourceTree = "<group>"; };
 		AB750C6F1F48FA3300819AA0 /* TipRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipRepository.swift; sourceTree = "<group>"; };
 		AB750C711F48FA4800819AA0 /* TipDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipDataSource.swift; sourceTree = "<group>"; };
+		AB750C731F49085B00819AA0 /* TipPresenterUnitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipPresenterUnitTest.swift; sourceTree = "<group>"; };
+		BFD45C45768EAAF0309E3665 /* Pods_TipItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1FFE2AA1EE8CCFE33230187 /* Pods-TipItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipItTests/Pods-TipItTests.release.xcconfig"; sourceTree = "<group>"; };
+		D76B3729B815DEBADC7C812C /* Pods-TipItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipItTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipItTests/Pods-TipItTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9E23B4339CBF808E128C0A6 /* Pods-TipItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipItUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipItUITests/Pods-TipItUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B4A916CCD09E438CB68A4C /* Pods_TipIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C38186789069C7C45D3303 /* Pods_TipItTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +98,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6644DD0AAA04CB91B439536E /* Pods_TipItUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A34DC91A41E9D76DF29B5B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1583FFA9AC15FE852805DC87 /* Pods-TipIt.debug.xcconfig */,
+				807F3DE10CBEA9C5879E0882 /* Pods-TipIt.release.xcconfig */,
+				D76B3729B815DEBADC7C812C /* Pods-TipItTests.debug.xcconfig */,
+				D1FFE2AA1EE8CCFE33230187 /* Pods-TipItTests.release.xcconfig */,
+				5C738DFA69AA0CA9CA5B271F /* Pods-TipItUITests.debug.xcconfig */,
+				E9E23B4339CBF808E128C0A6 /* Pods-TipItUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7EC7C9B98505F6267A73F0B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				315184B256EA06D4D22C4D18 /* Pods_TipIt.framework */,
+				7550CCB34B5018A0C39729F2 /* Pods_TipItTests.framework */,
+				BFD45C45768EAAF0309E3665 /* Pods_TipItUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB679BE01F48AF6B006F7B19 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +135,8 @@
 				AB679C001F48AF6C006F7B19 /* TipItTests */,
 				AB679C0B1F48AF6C006F7B19 /* TipItUITests */,
 				AB679BEA1F48AF6B006F7B19 /* Products */,
+				5A34DC91A41E9D76DF29B5B9 /* Pods */,
+				7EC7C9B98505F6267A73F0B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +170,7 @@
 			children = (
 				AB679C011F48AF6C006F7B19 /* TipItTests.swift */,
 				AB679C031F48AF6C006F7B19 /* Info.plist */,
+				AB750C731F49085B00819AA0 /* TipPresenterUnitTest.swift */,
 			);
 			path = TipItTests;
 			sourceTree = "<group>";
@@ -193,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB679C111F48AF6C006F7B19 /* Build configuration list for PBXNativeTarget "TipIt" */;
 			buildPhases = (
+				681DAD10DD118A8A7B885048 /* [CP] Check Pods Manifest.lock */,
 				AB679BE51F48AF6B006F7B19 /* Sources */,
 				AB679BE61F48AF6B006F7B19 /* Frameworks */,
 				AB679BE71F48AF6B006F7B19 /* Resources */,
+				ED5B14BDBD3C49753721E6F0 /* [CP] Embed Pods Frameworks */,
+				EF1450282092603A65557D3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,9 +256,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB679C141F48AF6C006F7B19 /* Build configuration list for PBXNativeTarget "TipItTests" */;
 			buildPhases = (
+				65DAA0954234943E97A8536A /* [CP] Check Pods Manifest.lock */,
 				AB679BF91F48AF6C006F7B19 /* Sources */,
 				AB679BFA1F48AF6C006F7B19 /* Frameworks */,
 				AB679BFB1F48AF6C006F7B19 /* Resources */,
+				7DBF60889D7967C5DC86F35D /* [CP] Embed Pods Frameworks */,
+				9ABB2BAD0F8C140A0FC8949E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,9 +277,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB679C171F48AF6C006F7B19 /* Build configuration list for PBXNativeTarget "TipItUITests" */;
 			buildPhases = (
+				9E5A0ABED86329E6F5969C51 /* [CP] Check Pods Manifest.lock */,
 				AB679C041F48AF6C006F7B19 /* Sources */,
 				AB679C051F48AF6C006F7B19 /* Frameworks */,
 				AB679C061F48AF6C006F7B19 /* Resources */,
+				CFD97C64F149CF074102F1B2 /* [CP] Embed Pods Frameworks */,
+				AA05EE919C8C046D38EEF7CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -316,6 +368,156 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		65DAA0954234943E97A8536A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TipItTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		681DAD10DD118A8A7B885048 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TipIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DBF60889D7967C5DC86F35D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TipItTests/Pods-TipItTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipItTests/Pods-TipItTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ABB2BAD0F8C140A0FC8949E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipItTests/Pods-TipItTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E5A0ABED86329E6F5969C51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TipItUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA05EE919C8C046D38EEF7CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipItUITests/Pods-TipItUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFD97C64F149CF074102F1B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipItUITests/Pods-TipItUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED5B14BDBD3C49753721E6F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipIt/Pods-TipIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF1450282092603A65557D3E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipIt/Pods-TipIt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AB679BE51F48AF6B006F7B19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -336,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB750C741F49085B00819AA0 /* TipPresenterUnitTest.swift in Sources */,
 				AB679C021F48AF6C006F7B19 /* TipItTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +683,7 @@
 		};
 		AB679C121F48AF6C006F7B19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1583FFA9AC15FE852805DC87 /* Pods-TipIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TipIt/Info.plist;
@@ -492,6 +696,7 @@
 		};
 		AB679C131F48AF6C006F7B19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 807F3DE10CBEA9C5879E0882 /* Pods-TipIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TipIt/Info.plist;
@@ -504,6 +709,7 @@
 		};
 		AB679C151F48AF6C006F7B19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D76B3729B815DEBADC7C812C /* Pods-TipItTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -518,6 +724,7 @@
 		};
 		AB679C161F48AF6C006F7B19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1FFE2AA1EE8CCFE33230187 /* Pods-TipItTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +739,7 @@
 		};
 		AB679C181F48AF6C006F7B19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C738DFA69AA0CA9CA5B271F /* Pods-TipItUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TipItUITests/Info.plist;
@@ -545,6 +753,7 @@
 		};
 		AB679C191F48AF6C006F7B19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E23B4339CBF808E128C0A6 /* Pods-TipItUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TipItUITests/Info.plist;
