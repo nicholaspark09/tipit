@@ -23,11 +23,11 @@ protocol TipView: NSObjectProtocol {
 }
 
 // Protocol that defines how implementations should handle the business logic
-protocol TipPresenterInterface {
+protocol TipPresenterInterface : BasePresenter {
     func clickedTipPercentage()
     func updateTipPercentage(tipPercentage: Float)
     func calculateTip(total: String?)
     func calculatePerPersonTip(tip: Float, total: Float)
     func attachView(view: TipView)
-    func detachView()
+    func reattachIfNecessary(view: TipView)
 }

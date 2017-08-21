@@ -45,6 +45,13 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate, UITable
         self.hideKeyboardWhenPossible()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("The view will load")
+        // For when the user has returned
+        presenter.reattachIfNecessary(view: self)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         presenter.detachView()
@@ -94,18 +101,7 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate, UITable
     func showTipChange(percent: String) {
         rateButton.title = percent
         // Flash the screen first to indicate something has changed
-        if let currentWindow = self.view {
-            let view = UIView(frame: currentWindow.bounds)
-            view.backgroundColor = UIColor.green
-            view.alpha = 1
-            currentWindow.addSubview(view)
-            UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
-                view.alpha = 0
-            }, completion: { (finished: Bool) in
-                view.removeFromSuperview()
-                
-            })
-        }
+        self.showSuccessFlash()
     }
     
     func showPerPersonTips(tips: [PerPersonTip]) {
@@ -158,6 +154,21 @@ extension UIViewController {
     
     func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func showSuccessFlash() {
+        if let currentWindow = self.view {
+            let view = UIView(frame: currentWindow.bounds)
+            view.backgroundColor = UIColor.green
+            view.alpha = 1
+            currentWindow.addSubview(view)
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+                view.alpha = 0
+            }, completion: { (finished: Bool) in
+                view.removeFromSuperview()
+                
+            })
+        }
     }
 }
 

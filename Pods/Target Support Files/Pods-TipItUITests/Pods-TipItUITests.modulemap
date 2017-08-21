@@ -1,6 +1,0 @@
-framework module Pods_TipItUITests {
-  umbrella header "Pods-TipItUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

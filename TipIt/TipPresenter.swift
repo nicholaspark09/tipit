@@ -11,13 +11,13 @@ import Foundation
 class TipPresenter : TipPresenterInterface {
  
     struct Constants {
-        static let maxCount = 6
+        static let MAX_COUNT = 6
     }
     
-    weak private var view: TipView?
     var tipPercentage: Float = 0.15
     private var repository: TipRepository?
     private var cachedTotal: String?
+    weak private var view: TipView?
     
     init(tipRepository: TipRepository) {
         repository = tipRepository
@@ -25,7 +25,6 @@ class TipPresenter : TipPresenterInterface {
     
     func updateTipPercentage(tipPercentage: Float) {
         self.tipPercentage = tipPercentage
-        repository?.saveTipRate(rate: tipPercentage)
         view?.showTipChange(percent: String("\(tipPercentage*100)%"))
         if (cachedTotal != nil) {
             calculateTip(total: cachedTotal)
@@ -45,8 +44,8 @@ class TipPresenter : TipPresenterInterface {
             if (preTipTotal != nil) {
                 let tip = preTipTotal! * tipPercentage
                 let totalBill = preTipTotal! + tip
-                view?.showTip(tip: String(format:"$%.2f", tip))
-                view?.showTotal(total: String(format:"$%.2f", totalBill))
+                view?.showTip(tip: tip.floatToDollarAmount())
+                view?.showTotal(total: totalBill.floatToDollarAmount())
                 view?.showTotalsSection(show: true)
                 calculatePerPersonTip(tip: tip, total: preTipTotal!)
             }
@@ -55,11 +54,11 @@ class TipPresenter : TipPresenterInterface {
     func calculatePerPersonTip(tip: Float, total: Float) {
         var arr = [PerPersonTip]()
         // Skip the first person as it's already being shown
-        for i in 1..<Constants.maxCount {
+        for i in 1..<Constants.MAX_COUNT {
             let individualTip = tip / Float(i+1)
-            let formattedTip = String(format: "$%.2f", individualTip)
+            let formattedTip = individualTip.floatToDollarAmount()
             let preFormattedTotal = individualTip + (total / Float(i+1))
-            let total = String(format: "$%.2f", preFormattedTotal)
+            let total = preFormattedTotal.floatToDollarAmount()
             let perPersonTip = PerPersonTip(numberOfPeople: i+1, tip: formattedTip, total: total)
             arr.append(perPersonTip)
         }
@@ -73,8 +72,13 @@ class TipPresenter : TipPresenterInterface {
     func attachView(view: TipView) {
         self.view = view
         tipPercentage = repository!.getTipRate()!
-        print("The percentage rate is \(repository!.getTipRate()!)")
         view.showTipChange(percent: String("\(tipPercentage*100)%"))
+    }
+    
+    func reattachIfNecessary(view: TipView) {
+        if self.view == nil {
+            self.view = view
+        }
     }
     
     func detachView() {

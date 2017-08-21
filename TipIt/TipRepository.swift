@@ -12,6 +12,7 @@ class TipRepository : TipDataSource {
     
     struct Constants {
         static let TIP_KEY = "key_rate"
+        static let TEMP_TIP_KEY = "key_current_rate"
         static let DEFAULT_RATE: Float = 0.15
     }
     
