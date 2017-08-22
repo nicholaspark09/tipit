@@ -25,7 +25,7 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate, UITable
     @IBOutlet weak var rateButton: UIBarButtonItem!
     
     var perPersonTips = [PerPersonTip?]()
-    private let presenter: TipPresenter = TipPresenter(tipRepository: TipRepository())
+    private let presenter: TipPresenter = TipPresenter(tipRepository: TipRepository.sharedInstance)
     
     /**
         Lifecycle methods
@@ -100,8 +100,14 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate, UITable
     
     func showTipChange(percent: String) {
         rateButton.title = percent
-        // Flash the screen first to indicate something has changed
-        self.showSuccessFlash()
+        // To indicate that the rates have been readjusted, animate the view
+        if let currentWindow = self.view {
+            let view = UIView(frame: currentWindow.bounds)
+            UIView.animate(withDuration: 0.4, animations: {
+                self.totalsView.frame.origin.x -= view.frame.width
+                self.tableView.frame.origin.x -= view.frame.width
+            })
+        }
     }
     
     func showPerPersonTips(tips: [PerPersonTip]) {
@@ -128,7 +134,6 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate, UITable
     
     /**
         Table View delegate methods
-     
      **/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return perPersonTips.count

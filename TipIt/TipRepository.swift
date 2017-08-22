@@ -16,9 +16,10 @@ class TipRepository : TipDataSource {
         static let DEFAULT_RATE: Float = 0.15
     }
     
+    static let sharedInstance = TipRepository()
     var defaults: UserDefaults?
     
-    init() {
+    private init() {
         defaults = UserDefaults.standard
     }
     

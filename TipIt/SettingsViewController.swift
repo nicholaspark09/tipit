@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController, SettingsView {
     @IBOutlet weak var saveButton: UIButton!
     
     //TODO Multiple instances of the repository might be possible, use the app delegate to ensure just one instance is present at any given time
-    private let presenter: SettingsPresenter = SettingsPresenter(repository: TipRepository())
+    private let presenter: SettingsPresenter = SettingsPresenter(repository: TipRepository.sharedInstance)
     
     override func viewDidLoad() {
         super.viewDidLoad()

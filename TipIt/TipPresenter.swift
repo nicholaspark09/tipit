@@ -15,17 +15,17 @@ class TipPresenter : TipPresenterInterface {
     }
     
     var tipPercentage: Float = 0.15
-    private var repository: TipRepository?
-    private var cachedTotal: String?
-    weak private var view: TipView?
+    var repository: TipDataSource?
+    var cachedTotal: String?
+    weak var view: TipView?
     
-    init(tipRepository: TipRepository) {
+    init(tipRepository: TipDataSource) {
         repository = tipRepository
     }
     
     func updateTipPercentage(tipPercentage: Float) {
         self.tipPercentage = tipPercentage
-        view?.showTipChange(percent: String("\(tipPercentage*100)%"))
+        view?.showTipChange(percent: tipPercentage.floatToPercentage())
         if (cachedTotal != nil) {
             calculateTip(total: cachedTotal)
         }
@@ -66,18 +66,21 @@ class TipPresenter : TipPresenterInterface {
     }
     
     func clickedTipPercentage() {
-        view?.showTipChanger(currentTipRate: String(format:"\(tipPercentage*100)%"))
+        view?.showTipChanger(currentTipRate: tipPercentage.floatToPercentage())
     }
     
     func attachView(view: TipView) {
         self.view = view
         tipPercentage = repository!.getTipRate()!
-        view.showTipChange(percent: String("\(tipPercentage*100)%"))
+        view.showTipChange(percent: tipPercentage.floatToPercentage())
     }
     
     func reattachIfNecessary(view: TipView) {
         if self.view == nil {
-            self.view = view
+            attachView(view: view)
+            if (cachedTotal != nil) {
+                calculateTip(total: cachedTotal)
+            }
         }
     }
     

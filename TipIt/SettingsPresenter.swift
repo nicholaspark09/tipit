@@ -15,10 +15,10 @@ class SettingsPresenter : SettingsPresenterInterface {
         static let TIP_RATES: [Float] = [0.15, 0.2, 0.25]
     }
     
-    private var repository: TipRepository?
+    private var repository: TipDataSource?
     weak private var view: SettingsView?
     
-    init(repository: TipRepository) {
+    init(repository: TipDataSource) {
         self.repository = repository
     }
     
@@ -66,7 +66,7 @@ class SettingsPresenter : SettingsPresenterInterface {
 
 extension Float {
     func floatToPercentage() -> String {
-        return String(format: "%.0f", self*100)
+        return String(format: "%.0f%%", self*100)
     }
     
     func floatToDollarAmount() -> String {
