@@ -47,7 +47,6 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate, UITable
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("The view will load")
         // For when the user has returned
         presenter.reattachIfNecessary(view: self)
     }
@@ -61,6 +60,11 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate, UITable
     /**
         TipView protocol methods
     **/
+    
+    func showPreviousTotal(total: String) {
+        pretotalTextField.text = total
+    }
+    
     func showTotalsSection(show: Bool) {
     
         UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
@@ -100,12 +104,12 @@ class TipViewController: UIViewController, TipView, UITextFieldDelegate, UITable
     
     func showTipChange(percent: String) {
         rateButton.title = percent
-        // To indicate that the rates have been readjusted, animate the view
+        // To indicate to the user that the rates have been readjusted, animate the view
         if let currentWindow = self.view {
             let view = UIView(frame: currentWindow.bounds)
             UIView.animate(withDuration: 0.4, animations: {
-                self.totalsView.frame.origin.x -= view.frame.width
-                self.tableView.frame.origin.x -= view.frame.width
+                self.totalsView.frame.origin.y -= view.frame.height
+                self.tableView.frame.origin.y -= view.frame.height
             })
         }
     }

@@ -9,6 +9,8 @@
 import Foundation
 
 protocol TipDataSource {
+    func getSavedBillAmount() -> Float
+    func saveBillAmount(billAmount: Float)
     func getTipRate() -> Float?
     func saveTipRate(rate: Float)
 }

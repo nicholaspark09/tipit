@@ -48,6 +48,7 @@ class TipPresenter : TipPresenterInterface {
                 view?.showTotal(total: totalBill.floatToDollarAmount())
                 view?.showTotalsSection(show: true)
                 calculatePerPersonTip(tip: tip, total: preTipTotal!)
+                repository?.saveBillAmount(billAmount: preTipTotal!)
             }
     }
     
@@ -73,6 +74,12 @@ class TipPresenter : TipPresenterInterface {
         self.view = view
         tipPercentage = repository!.getTipRate()!
         view.showTipChange(percent: tipPercentage.floatToPercentage())
+        // Check for a previously saved bill
+        if repository?.getSavedBillAmount() != nil {
+            cachedTotal = String("\(repository!.getSavedBillAmount())")
+            view.showPreviousTotal(total: cachedTotal!)
+            calculateTip(total: cachedTotal)
+        }
     }
     
     func reattachIfNecessary(view: TipView) {

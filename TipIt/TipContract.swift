@@ -12,6 +12,7 @@ import Foundation
 // Should be the controllers themselves
 // This allows for the view to be switched out if there needs to be a dramatic ui update
 protocol TipView: NSObjectProtocol {
+    func showPreviousTotal(total: String)
     func showTotalsSection(show: Bool)
     func showTip(tip: String)
     func showTotal(total: String)
